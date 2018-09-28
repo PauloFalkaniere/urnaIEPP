@@ -1,0 +1,10 @@
+*{
+	text-transform: uppercase;
+}
+
+.container{
+/*	border-style: solid;
+	border-color: #A9A9A9; */
+	border-width: 3px;
+	margin-top: 2%;
+}

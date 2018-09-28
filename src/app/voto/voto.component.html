@@ -1,0 +1,45 @@
+<!-- tela de votação -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <form>
+        Numero:
+        <input [(ngModel)]="voto_a.primeiro_num" size="1" maxlength="1" type="text" [ngModelOptions]="{standalone: true}" value="{{voto_a.primeiro_num}}" />
+        <input [(ngModel)]="voto_a.segundo_num" class="direita" size="1" maxlength="1" type="text" [ngModelOptions]="{standalone: true}" value="{{voto_a.segundo_num}}"/>
+      </form>
+      <p><div class="label">Nome: </div><h2 [hidden]="!candidato.name">{{candidato.name}}</h2>
+      <p><div class="label">Partido: </div><h5 [hidden]="!candidato.name">{{candidato.partido}} - {{candidato.partido_sigla}}</h5>
+      <p><div class="label">Vice-Presidente: </div><h5 [hidden]="!candidato.name">{{candidato.vice}}</h5>
+    </div>
+    <div class="col-sm">
+      <img  class="mt-1 mb-2" [hidden]="!candidato.name || candidato.partido=='NULO'" src="{{candidato.img_candidato}}" alt="Generic placeholder image"><br>
+      <img  class="mt-1 mb-2" [hidden]="!candidato.name || candidato.partido=='NULO'" src="{{candidato.img_vice  }}" alt="Generic placeholder image">
+    </div>
+    <div class="col-sm">
+      <div class="cinzaEscuro">
+        <img style="width: 100%; border: 1px solid gray " src="src/assets/Images/just_eleitoral.jpg">
+      </div>
+      <div class="preto">
+        <div class="teclado">
+          <button (click)="click('1')" class="bnt click">1</button>
+          <button (click)="click('2')" class="bnt click">2</button>
+          <button (click)="click('3')" class="bnt click">3</button>
+          <button (click)="click('4')" class="bnt click">4</button>
+          <button (click)="click('5')" class="bnt click">5</button>
+          <button (click)="click('6')" class="bnt click">6</button>
+          <button (click)="click('7')" class="bnt click">7</button>
+          <button (click)="click('8')" class="bnt click">8</button>
+          <button (click)="click('9')" class="bnt click">9</button>
+          <button (click)="click('0')" class="bnt click">0</button>
+          <div class="teclado2">
+            <button (click)="branco()" class="branco  click">BRANCO</button>
+            <button (click)="corrige()" class="laranja  click">CORRIGE</button>
+            <button (click)="confirma()" class="verde">CONFIRMA</button>
+            <source src="http://www.tse.jus.br/hotsites/simulador2018/sons/fim.mp3" type="audio/mp3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

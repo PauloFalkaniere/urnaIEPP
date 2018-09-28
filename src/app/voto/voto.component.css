@@ -1,0 +1,72 @@
+input{
+    margin-left: 2px; 
+    font-family: arial;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(102, 102, 102);
+    border-image: initial;
+}
+
+input.direita{
+    margin-left: 7px;
+}
+
+img{
+    width: 31%;
+}
+
+.label{
+    text-decoration: underline;
+}
+
+.laranja{
+  height: 40px;
+  width: 75px;
+  background-color: #E67401;
+  margin: 0px 6px;
+}
+.verde{
+  height: 40px;
+  width: 75px;
+  background-color: green;
+}
+
+.cinzaEscuro{
+  text-align: center;
+  background-color: #b6b5b5;
+  height: 25%;
+}
+
+.preto{
+  border: solid 2px;
+  background-color: #444;
+  height: 300px;
+  width: 100%
+}
+
+.teclado{
+    margin-left: 62px;
+}
+
+.bnt{
+  margin: 10px;
+  background-color: black;
+  color: snow;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+}
+.teclado2{
+  font-size: 11px;
+  /*position: absolute;*/
+  bottom: 20px;
+  left: 5px;
+  color: black;
+}
+.branco{
+  height: 40px;
+  width: 75px;
+}
