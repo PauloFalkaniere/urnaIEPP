@@ -1,7 +1,7 @@
 <!-- tela de votação -->
 
 <div class="container">
-  <div class="row">
+  <div class="row" [hidden]="votorealidado">
     <div class="col-sm">
       <form>
         Numero:
@@ -36,10 +36,12 @@
             <button (click)="branco()" class="branco  click">BRANCO</button>
             <button (click)="corrige()" class="laranja  click">CORRIGE</button>
             <button (click)="confirma()" class="verde">CONFIRMA</button>
-            <source src="http://www.tse.jus.br/hotsites/simulador2018/sons/fim.mp3" type="audio/mp3">
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="row fim" [hidden]="!votorealidado" style="text-align: center">
+      <h1>FIM!</h1>
   </div>
 </div>

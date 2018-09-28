@@ -25,11 +25,17 @@ export class VotoService {
     return localStorageItem == null ? [] : JSON.parse(localStorageItem).votos;
   }
 
-  addVoto(candidato: Candidato): Voto{
+  addVoto(candidato: Candidato): boolean{
     let voto = new Voto(this.nextId++, candidato.id);
     this.votos.push(voto);
-    this.setLocalStorageVotos(this.votos);
-    return voto;
+    try {
+      this.setLocalStorageVotos(this.votos);
+      return true;
+    }
+    catch(err){
+      console.log(err);
+      return false;
+    }
   }
 
   private setLocalStorageVotos(votos): void{

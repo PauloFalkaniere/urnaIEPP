@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Voto } from '../voto';
 import {CandidatoService} from '../candidato.service'
 import { Candidato } from '../candidato';
+import {Howl, Howler} from 'howler';
+
 
 // const fs = require('fs');
 
@@ -11,11 +13,20 @@ import { Candidato } from '../candidato';
   styleUrls: ['./voto.component.css']
 })
 export class VotoComponent implements OnInit {
+  private votorealidado: boolean;
+  private somFinal: Howler;
+  private urlSom: string;
 
-  constructor(private candidatoService: CandidatoService) { }
+  constructor(private candidatoService: CandidatoService) {
+    this.urlSom = "../../assets/Sounds/somurna.mp3"
+  }
 
   ngOnInit() {
+    this.votorealidado = false;
     this.candidatos = this.getCandidatos();
+    this.somFinal = new Howl({
+      src: [this.urlSom]
+    });
   }
 
   candidatos: Candidato[];
@@ -118,7 +129,13 @@ export class VotoComponent implements OnInit {
   }
 
   votar(): void{
-    this.candidatoService.addVoto(this.candidato);
+    let votoFinal = this.candidatoService.addVoto(this.candidato);
+    if (votoFinal == true){
+      this.votorealidado = true
+      this.somFinal.play();
+    } else {
+      alert('error');
+    }
   }
 
 }

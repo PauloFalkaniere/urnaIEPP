@@ -25,9 +25,8 @@ export class CandidatoService {
     return CANDIDATOS.filter((candidato)=> candidato.id == num)[0];
   }
 
-  addVoto(candidato): Candidato{
+  addVoto(candidato): boolean{
     // define o voto a ser feito
-    this.votoService.addVoto(candidato);
-    return candidato;
+    return this.votoService.addVoto(candidato);
   }
 }
