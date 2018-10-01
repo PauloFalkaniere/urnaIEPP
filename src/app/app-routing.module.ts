@@ -5,14 +5,8 @@ import { ContagemComponent }  from './contagem/contagem.component';
 import { VotoComponent } from './voto/voto.component';
 
 const appRoutes: Routes = [
-  {
-    path: 'contagem',
-    component: ContagemComponent,
-  },
-  {
-    path: 'voto',
-    component: [VotoComponent]
-  },
+  { path: 'contagem', component: ContagemComponent },
+  { path: 'voto', component: VotoComponent},
   { path: '**', component: VotoComponent }
 ];
 
