@@ -38,8 +38,7 @@ export const CANDIDATOS: Candidato[] = [
      img_vice: 'src/assets/Images/77vp.jpg',
      partido: 'Partido Democrático Estudantil',
      partido_sigla: 'MDE'
-    }
-
+    },
     { id: 80,
      name: 'NULO e BRANCO',
      total: 0,
