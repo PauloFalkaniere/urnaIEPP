@@ -11,7 +11,7 @@ export const CANDIDATOS: Candidato[] = [
     partido: 'Partido Liberal do Estudante',
     partido_sigla: 'PLE'
     },
-    { 
+    {
      id: 26,
      name: 'Kamila',
      total: 0,
@@ -38,5 +38,15 @@ export const CANDIDATOS: Candidato[] = [
      img_vice: 'src/assets/Images/77vp.jpg',
      partido: 'Partido Democrático Estudantil',
      partido_sigla: 'MDE'
+    }
+
+    { id: 80,
+     name: 'NULO e BRANCO',
+     total: 0,
+     vice:'',
+     img_candidato: '',
+     img_vice: '',
+     partido: '',
+     partido_sigla: ''
     }
 ];

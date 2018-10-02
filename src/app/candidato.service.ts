@@ -3,7 +3,6 @@ import { Observable, of } from 'rxjs';
 
 import { Candidato } from './candidato';
 import { CANDIDATOS } from './data_candidatos';
-import { VotoService } from './voto.service';
 import { Voto } from './voto';
 
 @Injectable({
@@ -13,20 +12,31 @@ export class CandidatoService {
 
   private nextId: number;
   private votos: Voto[];
+  private candidatos: Candidato[];
 
-  constructor(private votoService: VotoService) {
+  constructor() {
+    this.setLocalStorageCandidatos(CANDIDATOS);
   }
 
   getCandidatos(): Candidato[]{
-  	return CANDIDATOS;
+    let localStorageItem = localStorage.getItem('candidatos');
+    return localStorageItem == null ? [] : JSON.parse(localStorageItem).candidatos;
   }
 
   getCandidato(num): Candidato{
-    return CANDIDATOS.filter((candidato)=> candidato.id == num)[0];
+    let localStorageItem = localStorage.getItem('candidatos');
+    this.candidatos = localStorageItem == null ? [] : JSON.parse(localStorageItem).candidatos;
+    return this.candidatos.filter((candidato)=> candidato.id == num)[0];
   }
 
-  addVoto(candidato): boolean{
-    // define o voto a ser feito
-    return this.votoService.addVoto(candidato);
+  setCandidatos(candidatos): void{
+    this.setLocalStorageCandidatos(candidatos);
+  }
+
+
+  private setLocalStorageCandidatos(candidatos): void{
+    if(localStorage.getItem('candidatos') != null){
+      localStorage.setItem('candidatos', JSON.stringify({ candidatos: candidatos}));
+    }
   }
 }
