@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row"></div>
+  <div class="row">
+    Quantidade Total de votos: {{votos.length}}
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          Candidato:
+        </div>
+        <div *ngFor="let candidato of candidatos" class="col-sm">
+          {{candidato.name}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm" >
+          Qtd. Votos:
+        </div>
+        <div *ngFor="let candidato of candidatos" class="col-sm">
+          {{candidato.total}}
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <button (click)="resetUrna()" type="button" name="apagaVotos">Zerar Urna</button>
+  </div>
+</div>

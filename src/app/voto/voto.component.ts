@@ -3,6 +3,7 @@ import { Voto } from '../voto';
 import {CandidatoService} from '../candidato.service'
 import { Candidato } from '../candidato';
 import {Howl, Howler} from 'howler';
+import { VotoService } from '../voto.service';
 
 
 // const fs = require('fs');
@@ -17,7 +18,7 @@ export class VotoComponent implements OnInit {
   private somFinal: Howler;
   private urlSom: string;
 
-  constructor(private candidatoService: CandidatoService) {
+  constructor(private candidatoService: CandidatoService, private votoService: VotoService) {
     this.urlSom = "../../assets/Sounds/somurna.mp3"
   }
 
@@ -40,7 +41,7 @@ export class VotoComponent implements OnInit {
   }
   //caso nenhum dos candidatos seja escolhido
   VOTO_NULO: Candidato = {
-    id: null,
+    id: 80,
     name: "VOTO NULO",
     total: null,
     vice:'',
@@ -114,7 +115,7 @@ export class VotoComponent implements OnInit {
 
   branco(): void{
     this.candidato = {
-      id: null,
+      id: 80,
       name: "BRANCO",
       total: null,
       vice:'',
@@ -129,10 +130,11 @@ export class VotoComponent implements OnInit {
   }
 
   votar(): void{
-    let votoFinal = this.candidatoService.addVoto(this.candidato);
+    let votoFinal = this.votoService.addVoto(this.candidato);
     if (votoFinal == true){
       this.votorealidado = true
       this.somFinal.play();
+      setTimeout(function(){ location.reload(); }, 9000);
     } else {
       alert('error');
     }
