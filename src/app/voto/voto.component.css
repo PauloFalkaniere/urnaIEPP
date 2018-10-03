@@ -28,12 +28,14 @@ img{
 }
 
 .laranja{
+  color: white;
   height: 40px;
   width: 75px;
   background-color: #E67401;
   margin: 0px 6px;
 }
 .verde{
+  color: white;
   height: 40px;
   width: 75px;
   background-color: green;
