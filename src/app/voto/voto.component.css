@@ -1,5 +1,5 @@
 input{
-    margin-left: 2px; 
+    margin-left: 2px;
     font-family: arial;
     font-size: 25px;
     font-weight: 400;
@@ -17,6 +17,11 @@ input.direita{
 img{
     width: 31%;
 }
+
+.imgvice{
+  width: 60%!important;
+}
+
 
 .label{
     text-decoration: underline;

@@ -14,7 +14,9 @@
     </div>
     <div class="col-sm">
       <img  class="mt-1 mb-2" [hidden]="!candidato.name || candidato.partido=='NULO'" src="{{candidato.img_candidato}}" alt="Generic placeholder image"><br>
-      <img  class="mt-1 mb-2" [hidden]="!candidato.name || candidato.partido=='NULO'" src="{{candidato.img_vice  }}" alt="Generic placeholder image">
+      <img  class="mt-1 mb-2" [hidden]="!candidato.name || candidato.partido=='NULO' || candidato.name == 'Stephanie'" src="{{candidato.img_vice  }}" alt="Generic placeholder image">
+      <img  class="mt-1 mb-2 imgvice" [hidden]="candidato.name != 'Stephanie'" src="{{candidato.img_vice}}" alt="Generic placeholder image">
+
     </div>
     <div class="col-sm">
       <div class="cinzaEscuro">

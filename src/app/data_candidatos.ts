@@ -5,9 +5,9 @@ export const CANDIDATOS: Candidato[] = [
     id: 24,
     name: 'Stephanie',
     total: 0,
-    vice:'Yasmim',
+    vice:'Yasmim / Isabela Chaves',
     img_candidato: 'src/assets/Images/24p.jpg',
-    img_vice: 'src/assets/Images/24vp.jpg',
+    img_vice: 'src/assets/Images/24vp.png',
     partido: 'Partido Liberal do Estudante',
     partido_sigla: 'PLE'
     },
